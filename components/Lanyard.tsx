@@ -7,7 +7,17 @@ import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphe
 import * as THREE from 'three';
 import './Lanyard.css';
 
-export default function Lanyard({ position = [0, 0, 30], gravity = [0, -40, 0], fov = 20, transparent = true }) {
+export default function Lanyard({
+  position = [0, 0, 30] as [number, number, number],
+  gravity = [0, -40, 0],
+  fov = 20,
+  transparent = true
+}: {
+  position?: [number, number, number];
+  gravity?: [number, number, number];
+  fov?: number;
+  transparent?: boolean;
+}) {
   return (
     <div className="lanyard-wrapper">
       <Canvas
@@ -55,20 +65,23 @@ export default function Lanyard({ position = [0, 0, 30], gravity = [0, -40, 0], 
 }
 
 function Band({ maxSpeed = 50, minSpeed = 0 }) {
-  const band = useRef(),
-    fixed = useRef(),
-    j1 = useRef(),
-    j2 = useRef(),
-    j3 = useRef(),
-    card = useRef();
+  const band = useRef<THREE.Mesh | null>(null),
+    fixed = useRef<any>(),
+    j1 = useRef<any>(),
+    j2 = useRef<any>(),
+    j3 = useRef<any>(),
+    card = useRef<any>();
   const vec = new THREE.Vector3(),
     ang = new THREE.Vector3(),
     rot = new THREE.Vector3(),
     dir = new THREE.Vector3();
-  const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 4, linearDamping: 4 };
+  const segmentProps = { canSleep: true, colliders: false as const, angularDamping: 4, linearDamping: 4 };
   
   // Load GLB model and texture
-  const { nodes, materials } = useGLTF('/assets/lanyard/card.glb');
+  const { nodes, materials } = useGLTF('/assets/lanyard/card.glb') as unknown as {
+    nodes: { [key: string]: THREE.Mesh };
+    materials: { [key: string]: THREE.Material & { map?: THREE.Texture } };
+  };
   const texture = useTexture('/assets/lanyard/lanyard.png');
   
   // Fallback geometries if GLB fails
@@ -81,7 +94,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     () =>
       new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()])
   );
-  const [dragged, drag] = useState(false);
+  const [dragged, drag] = useState<THREE.Vector3 | null>(null);
   const [hovered, hover] = useState(false);
   const [isSmall, setIsSmall] = useState(() => typeof window !== 'undefined' && window.innerWidth < 1024);
   const [lastUpdate, setLastUpdate] = useState(0);
@@ -156,13 +169,13 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     <>
       <group position={[0, 4, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
-        <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
+        <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps} type="dynamic">
           <BallCollider args={[0.1]} />
         </RigidBody>
-        <RigidBody position={[1, 0, 0]} ref={j2} {...segmentProps}>
+        <RigidBody position={[1, 0, 0]} ref={j2} {...segmentProps} type="dynamic">
           <BallCollider args={[0.1]} />
         </RigidBody>
-        <RigidBody position={[1.5, 0, 0]} ref={j3} {...segmentProps}>
+        <RigidBody position={[1.5, 0, 0]} ref={j3} {...segmentProps} type="dynamic">
           <BallCollider args={[0.1]} />
         </RigidBody>
         <RigidBody position={[2, 0, 0]} ref={card} {...segmentProps} type={dragged ? 'kinematicPosition' : 'dynamic'}>
@@ -172,9 +185,9 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
             position={[0, -4.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
-            onPointerUp={e => (e.target.releasePointerCapture(e.pointerId), drag(false))}
+            onPointerUp={e => ((e.target as HTMLElement).releasePointerCapture(e.pointerId), drag(null))}
             onPointerDown={e => (
-              e.target.setPointerCapture(e.pointerId),
+              (e.target as HTMLElement).setPointerCapture(e.pointerId),
               drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation())))
             )}
           >
