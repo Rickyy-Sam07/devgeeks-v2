@@ -1,4 +1,14 @@
+# Node modules
 node_modules/
-.env
+
+# Build / output folders
+.next/
 dist/
 build/
+
+# Environment files
+.env
+
+# OS / IDE stuff
+.DS_Store
+.vscode/

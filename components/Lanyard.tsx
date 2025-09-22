@@ -84,6 +84,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
   const [dragged, drag] = useState(false);
   const [hovered, hover] = useState(false);
   const [isSmall, setIsSmall] = useState(() => typeof window !== 'undefined' && window.innerWidth < 1024);
+  const [lastUpdate, setLastUpdate] = useState(0);
 
   useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]);
   useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
@@ -130,11 +131,15 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
       curve.points[1].copy(j2.current.lerped);
       curve.points[2].copy(j1.current.lerped);
       curve.points[3].copy(fixed.current.translation());
-      if (band.current) {
-        const points = curve.getPoints(32);
+      // Only update geometry every few frames for performance
+      const now = Date.now();
+      if (band.current && band.current.geometry && now - lastUpdate > 16) {
         const tubeGeometry = new THREE.TubeGeometry(curve, 32, 0.02, 8, false);
-        band.current.geometry.dispose();
+        if (band.current.geometry.dispose) {
+          band.current.geometry.dispose();
+        }
         band.current.geometry = tubeGeometry;
+        setLastUpdate(now);
       }
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());

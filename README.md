@@ -1,15 +1,9 @@
-# Skitbit 3D Animation Agency Website
+# DevGeeks 
+whoever devs works dont push the node modules here as you wont be able to but it will lead to you have to rewrite the git rewrite history
 
-A modern, high-performance Next.js 15 website for Skitbit, a premium 3D animation agency featuring glassmorphism design, animated backgrounds, and mobile-first responsive layout.
 
-## Features
 
-- **Modern Tech Stack**: Next.js 15, React 19, TypeScript, Tailwind CSS v4
-- **Glassmorphism Design**: Beautiful glass effects with backdrop blur
-- **Animated Backgrounds**: WebGL Plasma + Liquid Ether effects
-- **Responsive Design**: Mobile-first approach with adaptive layouts
-- **Performance Optimized**: Static generation, lazy loading, optimized videos
-- **SEO Ready**: Structured data, meta tags, sitemap generation
+
 
 ## Getting Started
 
