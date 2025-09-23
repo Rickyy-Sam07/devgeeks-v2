@@ -12,3 +12,4 @@ build/
 # OS / IDE stuff
 .DS_Store
 .vscode/
+.next/
