@@ -5,7 +5,7 @@ import LazyVideo from "./lazy-video"
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto max-w-7xl px-4">
         <div className="flex flex-col items-center justify-center py-4 sm:py-8">
           <div className="mb-5 flex items-center gap-2">
             <Image src="/icons/skitbit-white.svg" alt="Skitbit logo" width={32} height={32} className="h-8 w-8" />
@@ -84,33 +84,32 @@ function PhoneCard({
 }
 const phoneData = [
   {
-    title: "Impact",
-    sub: "Turn ideas into real digital experiences.",
+    title: "Conversions",
+    sub: "Turn clicks into paying customers.",
     tone: "results",
     videoSrc:
-      "https://www.pexels.com/download/video/8177799/?fps=30",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/A%20new%20chapter%20in%20the%20story%20of%20success.__Introducing%20the%20new%20TAG%20Heuer%20Carrera%20Day-Date%20collection%2C%20reimagined%20with%20bold%20colors%2C%20refined%20finishes%2C%20and%20upgraded%20functionality%20to%20keep%20you%20focused%20on%20your%20goals.%20__Six%20-nDNoRQyFaZ8oaaoty4XaQz8W8E5bqA.mp4",
   },
   {
-    title: "Fast",
-    sub: "From concept to launch in record time.",
+    title: "Speed",
+    sub: "Launch in days, not weeks.",
     tone: "speed",
   },
   {
     title: "Social-Ready",
-    sub: "Optimized for web, mobile, and social.",
+    sub: "Made for IG, TikTok, and Meta.",
     tone: "social",
     videoSrc:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Timeline%201-Ku3Y2Hgaw8hCiFEFg1ELtYp631rSzR.webm",
   },
   {
     title: "Standout",
-    sub: "Make products and apps that grab attention.",
+    sub: "Be the product no one scrolls past.",
     tone: "standout",
   },
   {
-    title: "Collaborative",
-    sub: "Agency expertise meets community power.",
+    title: "Premium",
+    sub: "Look like the market leader.",
     tone: "premium",
-    videoSrc: "https://www.pexels.com/download/video/4167404/?fps=30",
   },
 ]
