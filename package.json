@@ -14,6 +14,7 @@
     "@react-three/drei": "^9.88.13",
     "@react-three/fiber": "^8.15.19",
     "@react-three/rapier": "^1.4.0",
+    "@types/three": "^0.180.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gsap": "^3.13.0",
