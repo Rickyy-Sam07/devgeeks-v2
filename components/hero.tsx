@@ -9,11 +9,11 @@ export function Hero() {
         <div className="flex flex-col items-center justify-center py-4 sm:py-8">
           <div className="mb-5 flex items-center gap-2">
             <Image src="/icons/skitbit-white.svg" alt="Skitbit logo" width={32} height={32} className="h-8 w-8" />
-            <p className="text-sm uppercase tracking-[0.25em] text-lime-300/80">skitbit</p>
+            <p className="text-sm uppercase tracking-[0.25em] text-lime-300/80">DevGeeks</p>
           </div>
           <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-white">
-            <span className="block">HIGH-IMPACT</span>
-            <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)]">3D ANIMATION</span>
+            <span className="block">NEXT GEN</span>
+            <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)]">Digital Expirence</span>
             <span className="block">FOR BRANDS</span>
           </h1>
           <div className="mt-6">
