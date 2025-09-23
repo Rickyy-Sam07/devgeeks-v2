@@ -8,9 +8,9 @@ import LiquidEther from "@/components/liquid-ether-background"
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export const metadata: Metadata = {
-  title: "Skitbit | 3D Animation Made Simple, Reliable & Scalable",
+  title: "DevGeeks | CONNECT. CODE. COLLABORATE.",
   description:
-    "From product launches to full-scale campaigns, Skitbit delivers 3D animation that's fast, consistent, and built to wow your audience.",
+    "DevGeeks: Community-driven agency delivering web, app, AI, and blockchain solutions.",
   generator: "Next.js",
 }
 

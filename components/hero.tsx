@@ -9,12 +9,12 @@ export function Hero() {
         <div className="flex flex-col items-center justify-center py-4 sm:py-8">
           <div className="mb-5 flex items-center gap-2">
             <Image src="/icons/skitbit-white.svg" alt="Skitbit logo" width={32} height={32} className="h-8 w-8" />
-            <p className="text-sm uppercase tracking-[0.25em] text-lime-300/80">skitbit</p>
+            <p className="text-sm uppercase tracking-[0.25em] text-lime-300/80">DevGeeks</p>
           </div>
           <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-white">
-            <span className="block">HIGH-IMPACT</span>
-            <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)]">3D ANIMATION</span>
-            <span className="block">FOR BRANDS</span>
+            <span className="block">CONNECT. CODE. COLLABORATE.</span>
+            <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)]">WE BUILD. WE INNOVATE.</span>
+            <span className="block">YOUR DIGITAL PARTNER.</span>
           </h1>
           <div className="mt-6">
             <Button asChild className="rounded-full bg-lime-400 px-6 text-black hover:bg-lime-300">
@@ -82,35 +82,35 @@ function PhoneCard({
     </div>
   )
 }
-
 const phoneData = [
   {
-    title: "Conversions",
-    sub: "Turn clicks into paying customers.",
+    title: "Impact",
+    sub: "Turn ideas into real digital experiences.",
     tone: "results",
     videoSrc:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/A%20new%20chapter%20in%20the%20story%20of%20success.__Introducing%20the%20new%20TAG%20Heuer%20Carrera%20Day-Date%20collection%2C%20reimagined%20with%20bold%20colors%2C%20refined%20finishes%2C%20and%20upgraded%20functionality%20to%20keep%20you%20focused%20on%20your%20goals.%20__Six%20-nDNoRQyFaZ8oaaoty4XaQz8W8E5bqA.mp4",
+      "https://www.pexels.com/download/video/8177799/?fps=30",
   },
   {
-    title: "Speed",
-    sub: "Launch in days, not weeks.",
+    title: "Fast",
+    sub: "From concept to launch in record time.",
     tone: "speed",
   },
   {
     title: "Social-Ready",
-    sub: "Made for IG, TikTok, and Meta.",
+    sub: "Optimized for web, mobile, and social.",
     tone: "social",
     videoSrc:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Timeline%201-Ku3Y2Hgaw8hCiFEFg1ELtYp631rSzR.webm",
   },
   {
     title: "Standout",
-    sub: "Be the product no one scrolls past.",
+    sub: "Make products and apps that grab attention.",
     tone: "standout",
   },
   {
-    title: "Premium",
-    sub: "Look like the market leader.",
+    title: "Collaborative",
+    sub: "Agency expertise meets community power.",
     tone: "premium",
+    videoSrc: "https://www.pexels.com/download/video/4167404/?fps=30",
   },
 ]

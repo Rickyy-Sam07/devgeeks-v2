@@ -12,8 +12,9 @@ export function SiteHeader() {
   const links = [
     { href: "/", label: "Home", icon: Briefcase },
     { href: "#pricing", label: "Pricing", icon: Tag },
-    { href: "/faq", label: "FAQ", icon: HelpCircle },
+    { href: "/Projects", label: "Projects", icon: HelpCircle },
     { href: "#blog", label: "Blog", icon: FileText },
+    { href: "#Customers", label: "Customers", icon: Tag },
     { href: "/About", label: "About", icon: Info },
   ]
 
@@ -25,12 +26,12 @@ export function SiteHeader() {
           <Link href="/" className="flex items-center gap-1.5">
             <Image
               src="/icons/skitbit-white.svg"
-              alt="Skitbit logo"
+              alt="DevGeeks logo"
               width={20}
               height={20}
               className="h-5 w-5"
             />
-            <span className="font-semibold tracking-wide text-white">Skitbit</span>
+            <span className="font-semibold tracking-wide text-white">DevGeeks</span>
           </Link>
 
           <nav className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
@@ -75,12 +76,12 @@ export function SiteHeader() {
                 <div className="flex items-center gap-1.5 px-4 py-4 border-b border-gray-800">
                   <Image
                     src="/icons/skitbit-white.svg"
-                    alt="Skitbit logo"
+                    alt="DevGeeks logo"
                     width={24}
                     height={24}
                     className="h-6 w-6"
                   />
-                  <span className="font-semibold tracking-wide text-white text-lg">Skitbit</span>
+                  <span className="font-semibold tracking-wide text-white text-lg">DevGeeks</span>
                 </div>
 
                 <nav className="flex flex-col gap-1 mt-2 text-gray-200">
