@@ -12,9 +12,9 @@ export function Hero() {
             <p className="text-sm uppercase tracking-[0.25em] text-lime-300/80">DevGeeks</p>
           </div>
           <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-white">
-            <span className="block">NEXT GEN</span>
-            <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)]">Digital Expirence</span>
-            <span className="block">FOR BRANDS</span>
+            <span className="block">CONNECT. CODE. COLLABORATE.</span>
+            <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)]">WE BUILD. WE INNOVATE.</span>
+            <span className="block">YOUR DIGITAL PARTNER.</span>
           </h1>
           <div className="mt-6">
             <Button asChild className="rounded-full bg-lime-400 px-6 text-black hover:bg-lime-300">
