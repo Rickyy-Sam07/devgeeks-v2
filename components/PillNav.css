@@ -22,6 +22,7 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
+  justify-content: center;
 }
 
 @media (max-width: 868px) {
@@ -33,7 +34,7 @@
   }
 }
 
-.pill-nav-items {
+.pill-nav-content {
   position: relative;
   display: flex;
   align-items: center;
@@ -43,35 +44,36 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 9999px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  gap: 2rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.pill-nav-items {
+  display: flex;
 }
 
 .pill-logo {
-  width: var(--nav-h);
-  height: var(--nav-h);
-  border-radius: 50%;
-  background: var(--base, #000);
-  padding: 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  text-decoration: none;
 }
 
 .pill-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 2rem;
+  width: auto;
+  object-fit: contain;
   display: block;
 }
 
 .pill-list {
   list-style: none;
   display: flex;
-  align-items: stretch;
-  gap: var(--pill-gap);
+  align-items: center;
+  gap: 0.5rem;
   margin: 0;
-  padding: 3px;
-  height: 100%;
+  padding: 0;
+  height: auto;
 }
 
 .pill-list > li {
@@ -84,17 +86,15 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  padding: 0 var(--pill-pad-x);
-  background: var(--pill-bg, #fff);
-  color: var(--pill-text, var(--base, #000));
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--base, #fff);
   text-decoration: none;
   border-radius: 9999px;
   box-sizing: border-box;
   font-weight: 600;
   font-size: 16px;
-  line-height: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.2px;
+  line-height: 1;
   white-space: nowrap;
   cursor: pointer;
   position: relative;
@@ -106,7 +106,7 @@
   left: 50%;
   bottom: 0;
   border-radius: 50%;
-  background: var(--base, #000);
+  background: #fff;
   z-index: 1;
   display: block;
   pointer-events: none;

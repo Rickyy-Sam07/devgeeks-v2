@@ -247,18 +247,19 @@ const PillNav = ({
   return (
     <div className="pill-nav-container">
       <nav className={`pill-nav ${className}`} aria-label="Primary" style={cssVars}>
-        <Link
-          className="pill-logo"
-          href="/"
-          aria-label="Home"
-          onMouseEnter={handleLogoEnter}
-          ref={logoRef}
-        >
-          <img src={logo} alt={logoAlt} ref={logoImgRef} />
-        </Link>
+        <div className="pill-nav-content">
+          <Link
+            className="pill-logo"
+            href="/"
+            aria-label="Home"
+            onMouseEnter={handleLogoEnter}
+            ref={logoRef}
+          >
+            <img src={logo} alt={logoAlt} ref={logoImgRef} />
+          </Link>
 
-        <div className="pill-nav-items desktop-only" ref={navItemsRef}>
-          <ul className="pill-list" role="menubar">
+          <div className="pill-nav-items desktop-only" ref={navItemsRef}>
+            <ul className="pill-list" role="menubar">
             {items.map((item, i) => (
               <li key={item.href || `item-${i}`} role="none">
                 {isRouterLink(item.href) ? (
@@ -310,7 +311,8 @@ const PillNav = ({
                 )}
               </li>
             ))}
-          </ul>
+            </ul>
+          </div>
         </div>
 
         <button

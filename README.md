@@ -1,9 +1,6 @@
 # DevGeeks 
-whoever devs works dont push the node modules here as you wont be able to but it will lead to you have to rewrite the git rewrite history
 
-
-
-
+A modern Next.js website with glassmorphism navigation, 3D animations, and interactive components.
 
 ## Getting Started
 
@@ -26,17 +23,25 @@ npm run dev
 │   ├── api/               # API routes
 │   ├── globals.css        # Global styles
 │   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Homepage
+│   └── page.tsx           # Homepage (main component merger)
 ├── components/            # React components
 │   ├── ui/               # Reusable UI components
+│   ├── PillNav.tsx       # Glassmorphism navigation
+│   ├── PillNav.css       # Navigation styles
+│   ├── Lanyard.tsx       # 3D lanyard animation
+│   ├── Lanyard.css       # Lanyard styles
+│   ├── liquid-ether-background.tsx # WebGL fluid background
+│   ├── liquid-ether-background.css # Background styles
 │   ├── hero.tsx          # Hero section
 │   ├── features.tsx      # Features section
 │   ├── pricing.tsx       # Pricing section
+│   ├── site-header.tsx   # Main header component
 │   └── ...
 ├── lib/                  # Utility functions
 ├── public/               # Static assets
+│   ├── assets/lanyard/   # 3D model assets
 │   ├── icons/           # SVG icons
-│   └── images/          # Images (add your images here)
+│   └── images/          # Images
 └── ...
 ```
 
@@ -53,11 +58,24 @@ Add the following images to `/public/images/`:
 
 ## Key Components
 
+- **PillNav**: Glassmorphism navigation bar with centered layout and smooth animations
 - **Hero**: Phone grid with video previews
 - **Features**: Glassmorphism cards with client testimonials
+- **Lanyard**: Interactive 3D lanyard animation using Three.js and Rapier physics
+- **LiquidEther**: WebGL fluid simulation background with mouse interaction
 - **Logo Marquee**: Infinite scrolling brand logos
 - **Pricing**: Three-tier pricing with modal examples
 - **Footer**: App preview and social links
+
+## Component Integration
+
+All components are merged in `app/page.tsx` which serves as the main entry point:
+- SiteHeader (contains PillNav)
+- Hero section
+- Features section
+- Logo Marquee
+- Pricing section
+- Footer
 
 ## Customization
 
