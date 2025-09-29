@@ -4,6 +4,7 @@ import { Features } from "@/components/features"
 import { LogoMarquee } from "@/components/logo-marquee"
 import { Pricing } from "@/components/pricing"
 import { AppverseFooter } from "@/components/appverse-footer"
+import { SmoothCursor } from "@/components/ui/smooth-cursor"
 import Script from "next/script"
 
 export const dynamic = "force-static"
@@ -77,6 +78,7 @@ export default function Page() {
 
   return (
     <>
+      <SmoothCursor />
       <main className="min-h-[100dvh] text-white">
         <SiteHeader />
         <Hero />

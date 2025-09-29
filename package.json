@@ -17,6 +17,7 @@
     "@types/three": "^0.180.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.23.22",
     "gsap": "^3.13.0",
     "lucide-react": "^0.454.0",
     "meshline": "^3.1.6",
@@ -24,7 +25,7 @@
     "ogl": "^1.0.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwind-merge": "^2.5.5",
+    "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.180.0"
   },
