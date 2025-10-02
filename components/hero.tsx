@@ -58,7 +58,7 @@ function PhoneCard({
         <LazyVideo
           src={
             videoSrc ??
-            "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/b0f3222371106db366a14ca1c29cef55-1b1EWVSa4w3FL2zslcaCGYTy9vcxjF.mp4"
+            "https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/Digital_Transformation_Video_Generation.mp4"
           }
           className="absolute inset-0 h-full w-full object-cover"
           autoPlay={true}
@@ -88,24 +88,27 @@ const phoneData = [
     sub: "Turn ideas into real digital experiences.",
     tone: "results",
     videoSrc:
-      "https://www.pexels.com/download/video/8177799/?fps=30",
+      "https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/Digital_Transformation_Video_Generation.mp4",
   },
   {
     title: "Fast",
     sub: "From concept to launch in record time.",
     tone: "speed",
+    videoSrc:
+      "https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/Rapid_Development_Workflow_Video_Generation.mp4",
   },
   {
     title: "Social-Ready",
     sub: "Optimized for web, mobile, and social.",
     tone: "social",
     videoSrc:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Timeline%201-Ku3Y2Hgaw8hCiFEFg1ELtYp631rSzR.webm",
+      "https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/Cross_Platform_App_Demo_Video.mp4",
   },
   {
     title: "Standout",
     sub: "Make products and apps that grab attention.",
     tone: "standout",
+    videoSrc: "https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/Design_Transformation_Video_Generation.mp4",
   },
   {
     title: "Collaborative",
