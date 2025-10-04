@@ -37,20 +37,7 @@ export function AppverseFooter() {
 
   return (
     <section className="text-white">
-      <div className="container mx-auto px-4 pt-12 sm:pt-16">
-        <div className="flex justify-center">
-          <Button
-            asChild
-            className="rounded-full bg-lime-400 px-6 py-2 text-sm font-medium text-black shadow-[0_0_20px_rgba(163,230,53,0.35)] hover:bg-lime-300"
-          >
-            <a href="https://wa.link/rc25na" target="_blank" rel="noopener noreferrer">
-              Contact us
-            </a>
-          </Button>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 py-12 sm:py-16">
+      <div className="container mx-auto px-4 py-8 sm:py-12">
         <Card className="relative overflow-hidden rounded-3xl liquid-glass p-6 sm:p-10">
           <div className="relative grid items-center gap-8 md:grid-cols-2">
             <div>

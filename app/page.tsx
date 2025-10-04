@@ -1,8 +1,12 @@
 import { SiteHeader } from "@/components/site-header"
 import { Hero } from "@/components/hero"
+import { About } from "@/components/about"
+import { Opportunities } from "@/components/opportunities"
+import { CommunityStats } from "@/components/community-stats"
 import { Features } from "@/components/features"
 import { LogoMarquee } from "@/components/logo-marquee"
 import { Pricing } from "@/components/pricing"
+import { SocialLinks } from "@/components/social-links"
 import { AppverseFooter } from "@/components/appverse-footer"
 import { SmoothCursor } from "@/components/ui/smooth-cursor"
 import Script from "next/script"
@@ -82,9 +86,13 @@ export default function Page() {
       <main className="min-h-[100dvh] text-white">
         <SiteHeader />
         <Hero />
+        <About />
+        <Opportunities />
+        <CommunityStats />
         <Features />
         <LogoMarquee />
         <Pricing />
+        <SocialLinks />
         <AppverseFooter />
       </main>
 

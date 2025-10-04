@@ -8,18 +8,18 @@ export function Hero() {
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex flex-col items-center justify-center py-8 sm:py-12 pointer-events-none">
           <div className="mb-5 flex items-center gap-2 pointer-events-none">
-            <Image src="/icons/skitbit-white.svg" alt="Skitbit logo" width={32} height={32} className="h-8 w-8" />
+            <span className="text-2xl">🐦🔥</span>
             <p className="text-sm uppercase tracking-[0.25em] text-lime-300/80">DevGeeks™</p>
           </div>
           <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-white pointer-events-none">
-            <span className="block">BUILD.SHARE.GROW௹</span>
-            <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)]">WE BUILD. WE INNOVATE.</span>
-            <span className="block">YOUR DIGITAL PARTNER.</span>
+            <span className="block">BUILD • SHARE • GROW</span>
+            <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)]">LEARN. COLLABORATE. INSPIRE.</span>
+            <span className="block">YOUR TECH COMMUNITY.</span>
           </h1>
           <div className="mt-6 pointer-events-auto">
             <Button asChild className="rounded-full bg-lime-400 px-6 text-black hover:bg-lime-300">
-              <a href="https://wa.link/rc25na" target="_blank" rel="noopener noreferrer">
-                Chat With Us
+              <a href="https://www.linkedin.com/groups/14694232/" target="_blank" rel="noopener noreferrer">
+                Join Community
               </a>
             </Button>
           </div>
@@ -74,7 +74,7 @@ function PhoneCard({
             <div className="text-3xl font-bold leading-snug text-white/90">{title}</div>
             <p className="text-xs text-white/70">{sub}</p>
             <div className="mt-3 inline-flex items-center rounded-full bg-black/40 px-2 py-0.5 text-[10px] uppercase tracking-wider text-lime-300">
-              {tone === "calm" ? "skitbit app" : tone}
+              {tone === "calm" ? "devgeeks" : tone}
             </div>
           </div>
         </div>
@@ -84,36 +84,36 @@ function PhoneCard({
 }
 const phoneData = [
   {
-    title: "Impact",
-    sub: "Turn ideas into real digital experiences.",
-    tone: "results",
+    title: "Collaborate",
+    sub: "Work with peers on real-world projects.",
+    tone: "community",
     videoSrc:
       "https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/Digital_Transformation_Video_Generation.mp4",
   },
   {
-    title: "Fast",
-    sub: "From concept to launch in record time.",
-    tone: "speed",
+    title: "Learn",
+    sub: "Get mentorship from industry experts.",
+    tone: "growth",
     videoSrc:
       "https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/Rapid_Development_Workflow_Video_Generation.mp4",
   },
   {
-    title: "Social-Ready",
-    sub: "Optimized for web, mobile, and social.",
-    tone: "social",
+    title: "Build",
+    sub: "Showcase projects and get feedback.",
+    tone: "create",
     videoSrc:
       "https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/Cross_Platform_App_Demo_Video.mp4",
   },
   {
-    title: "Standout",
-    sub: "Make products and apps that grab attention.",
-    tone: "standout",
+    title: "Opportunities",
+    sub: "Access freelancing and project support.",
+    tone: "success",
     videoSrc: "https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/Design_Transformation_Video_Generation.mp4",
   },
   {
-    title: "Collaborative",
-    sub: "Agency expertise meets community power.",
-    tone: "premium",
-    videoSrc: "https://www.pexels.com/download/video/4167404/?fps=30",
+    title: "Community",
+    sub: "Join passionate tech enthusiasts worldwide.",
+    tone: "devgeeks",
+    videoSrc: "https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/Logo_Video_With_Cool_Effect.mp4",
   },
 ]
