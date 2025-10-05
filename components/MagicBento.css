@@ -2,10 +2,10 @@
   --hue: 27;
   --sat: 69%;
   --white: hsl(0, 0%, 100%);
-  --purple-primary: rgba(132, 0, 255, 1);
-  --purple-glow: rgba(132, 0, 255, 0.2);
-  --purple-border: rgba(132, 0, 255, 0.8);
-  --border-color: #392e4e;
+  --hotpink-primary: rgba(255, 105, 180, 1);
+  --hotpink-glow: rgba(255, 105, 180, 0.2);
+  --hotpink-border: rgba(255, 105, 180, 0.8);
+  --border-color: rgba(255, 105, 180, 0.3);
   --background-dark: #060010;
   color-scheme: light dark;
 }
@@ -21,7 +21,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: relative;
   aspect-ratio: 4/3;
   min-height: 200px;
@@ -85,14 +85,25 @@
 }
 
 .card__image {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 120px;
-  margin-bottom: 1rem;
-  border-radius: 12px;
+  height: 100%;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 0;
+}
+
+.card__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(6, 0, 16, 0.4) 0%, rgba(6, 0, 16, 0.1) 100%);
+  z-index: 1;
+  transition: background 0.7s ease-in-out;
+}
+
+.card:hover .card__image::after {
+  background: linear-gradient(to bottom, rgba(6, 0, 16, 0.8) 0%, rgba(6, 0, 16, 0.4) 100%);
 }
 
 .card__image img {
@@ -104,6 +115,16 @@
 
 .card:hover .card__image img {
   transform: scale(1.05);
+}
+
+.card__header,
+.card__content {
+  position: relative;
+  z-index: 2;
+}
+
+.card__content {
+  margin-top: 0.5rem;
 }
 
 .card--text-autohide .card__title,
@@ -173,8 +194,8 @@
   padding: 6px;
   background: radial-gradient(
     var(--glow-radius) circle at var(--glow-x) var(--glow-y),
-    rgba(132, 0, 255, calc(var(--glow-intensity) * 0.8)) 0%,
-    rgba(132, 0, 255, calc(var(--glow-intensity) * 0.4)) 30%,
+    rgba(255, 105, 180, calc(var(--glow-intensity) * 0.8)) 0%,
+    rgba(255, 105, 180, calc(var(--glow-intensity) * 0.4)) 30%,
     transparent 60%
   );
   border-radius: inherit;
@@ -197,8 +218,8 @@
 
 .card--border-glow:hover {
   box-shadow:
-    0 4px 20px rgba(46, 24, 78, 0.4),
-    0 0 30px var(--purple-glow);
+    0 4px 20px rgba(255, 105, 180, 0.4),
+    0 0 30px var(--hotpink-glow);
 }
 
 .particle-container {
@@ -213,15 +234,15 @@
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: rgba(132, 0, 255, 0.2);
+  background: rgba(255, 105, 180, 0.2);
   border-radius: 50%;
   z-index: -1;
 }
 
 .particle-container:hover {
   box-shadow:
-    0 4px 20px rgba(46, 24, 78, 0.2),
-    0 0 30px var(--purple-glow);
+    0 4px 20px rgba(255, 105, 180, 0.2),
+    0 0 30px var(--hotpink-glow);
 }
 
 /* Global spotlight styles */

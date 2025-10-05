@@ -5,6 +5,8 @@ import Image from "next/image"
 import { Star } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import MagicBento from './MagicBento'
+import MagicBento1 from "./MagicBento1"
+import MagicBento2 from "./MagicBento2"
 
 interface FeaturesContent {
   title: string
@@ -40,7 +42,13 @@ export function Features() {
       </h2>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <MagicBento 
+        <Card className="hidden md:block liquid-glass border border-white/10 bg-white/5 backdrop-blur-xl">
+          <CardHeader>
+            <p className="text-[11px] tracking-widest text-neutral-400">ADAPTABILITY</p>
+            <CardTitle className="mt-1 text-xl text-white">Make the experience truly intuitive</CardTitle>
+          </CardHeader>
+          <CardContent>
+          <MagicBento 
           textAutoHide={true}
           enableStars={true}
           enableSpotlight={true}
@@ -51,25 +59,7 @@ export function Features() {
           spotlightRadius={300}
           particleCount={12}
           glowColor="132, 0, 255"
-        />
-        <Card className="hidden md:block liquid-glass border border-white/10 bg-white/5 backdrop-blur-xl">
-          <CardHeader>
-            <p className="text-[11px] tracking-widest text-neutral-400">ADAPTABILITY</p>
-            <CardTitle className="mt-1 text-xl text-white">Make the experience truly intuitive</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
-                <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
-                  <span className="text-white/60 text-sm">Image: intuitive-1.png</span>
-                </div>
-              </div>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10">
-                <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-green-500/20 flex items-center justify-center">
-                  <span className="text-white/60 text-sm">Image: intuitive-2.png</span>
-                </div>
-              </div>
-            </div>
+          />
           </CardContent>
         </Card>
 
@@ -89,14 +79,42 @@ export function Features() {
                 ))}
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="h-full w-full rounded-xl border border-white/10 bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center aspect-video">
-                <span className="text-white/60 text-sm">Image: top-rated-1.png</span>
-              </div>
-              <div className="h-full w-full rounded-xl border border-white/10 bg-gradient-to-br from-green-500/20 to-blue-500/20 flex items-center justify-center aspect-video">
-                <span className="text-white/60 text-sm">Image: top-rated-2.png</span>
-              </div>
-            </div>
+            <MagicBento1 
+              textAutoHide={true}
+              enableStars={true}
+              enableSpotlight={true}
+              enableBorderGlow={true}
+              enableTilt={true}
+              enableMagnetism={true}
+              clickEffect={true}
+              spotlightRadius={300}
+              particleCount={12}
+              glowColor="132, 0, 255"
+            />
+          </CardContent>
+        </Card>
+      </div>
+      <div className="grid gap-6 md:grid-cols-1 mt-12 max-w-7xl mx-auto">
+        <Card className="hidden md:block liquid-glass border border-white/10 bg-white/5 backdrop-blur-xl">
+          <CardHeader>
+            <p className="text-[11px] tracking-widest text-neutral-400">ADAPTABILITY</p>
+            <CardTitle className="mt-1 text-xl text-white">Make the experience truly intuitive</CardTitle>
+          </CardHeader>
+          <CardContent>
+          <div className="flex justify-center">
+            <MagicBento2 
+            textAutoHide={true}
+            enableStars={true}
+            enableSpotlight={true}
+            enableBorderGlow={true}
+            enableTilt={true}
+            enableMagnetism={true}
+            clickEffect={true}
+            spotlightRadius={300}
+            particleCount={12}
+            glowColor="132, 0, 255"
+            />
+          </div>
           </CardContent>
         </Card>
       </div>

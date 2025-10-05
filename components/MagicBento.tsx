@@ -37,14 +37,14 @@ const cardData: BentoCardProps[] = [
     title: 'Analytics',
     description: 'Track user behavior',
     label: 'Insights',
-    image: '/assets/features/analytics.png'
+    image: '/assets/features/collaboration.png'
   },
   {
     color: '#060010',
     title: 'Dashboard',
     description: 'Centralized data view',
     label: 'Overview',
-    image: '/assets/features/dashboard.png'
+    image: '/assets/features/collaboration.png'
   },
   {
     color: '#060010',
@@ -58,21 +58,21 @@ const cardData: BentoCardProps[] = [
     title: 'Automation',
     description: 'Streamline workflows',
     label: 'Efficiency',
-    image: '/assets/features/automation.png'
+    image: '/assets/features/collaboration.png'
   },
   {
     color: '#060010',
     title: 'Integration',
     description: 'Connect favorite tools',
     label: 'Connectivity',
-    image: '/assets/features/integration.png'
+    image: '/assets/features/collaboration.png'
   },
   {
     color: '#060010',
     title: 'Security',
     description: 'Enterprise-grade protection',
     label: 'Protection',
-    image: '/assets/features/security.png'
+    image: '/assets/features/collaboration.png'
   }
 ];
 
@@ -571,15 +571,15 @@ const MagicBento: React.FC<BentoProps> = ({
                 clickEffect={clickEffect}
                 enableMagnetism={enableMagnetism}
               >
+                {card.image && (
+                  <div className="card__image">
+                    <img src={card.image} alt={card.title} loading="lazy" />
+                  </div>
+                )}
                 <div className="card__header">
                   <div className="card__label">{card.label}</div>
                 </div>
                 <div className="card__content">
-                  {card.image && (
-                    <div className="card__image">
-                      <img src={card.image} alt={card.title} loading="lazy" />
-                    </div>
-                  )}
                   <h2 className="card__title">{card.title}</h2>
                   <p className="card__description">{card.description}</p>
                 </div>
@@ -700,15 +700,15 @@ const MagicBento: React.FC<BentoProps> = ({
                 el.addEventListener('click', handleClick);
               }}
             >
+              {card.image && (
+                <div className="card__image">
+                  <img src={card.image} alt={card.title} loading="lazy" />
+                </div>
+              )}
               <div className="card__header">
                 <div className="card__label">{card.label}</div>
               </div>
               <div className="card__content">
-                {card.image && (
-                  <div className="card__image">
-                    <img src={card.image} alt={card.title} loading="lazy" />
-                  </div>
-                )}
                 <h2 className="card__title">{card.title}</h2>
                 <p className="card__description">{card.description}</p>
               </div>
