@@ -3,7 +3,6 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import Script from "next/script"
-import LiquidEther from "@/components/liquid-ether-background"
 
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
@@ -47,13 +46,8 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>
-        <div className="fixed inset-0 z-0 bg-black">
-          <LiquidEther colors={['#2d05cc', '#0fe661', '#f6f939']} />
-        </div>
-        <div className="relative z-10 pointer-events-none">
-          <div className="pointer-events-auto">{children}</div>
-        </div>
+      <body className="bg-black">
+        {children}
       </body>
     </html>
   )
