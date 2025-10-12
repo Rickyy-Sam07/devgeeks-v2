@@ -1,6 +1,5 @@
 "use client"
 
-import { SmoothCursor } from "@/components/ui/smooth-cursor"
 import dynamic from 'next/dynamic'
 
 const Hyperspeed = dynamic(() => import('@/components/hyperspeed'), {
@@ -32,7 +31,6 @@ const Hyperspeed = dynamic(() => import('@/components/hyperspeed'), {
 export default function PricingDetailsPage() {
   return (
     <>
-      <SmoothCursor />
       <div className="fixed inset-0 -z-10">
         <Hyperspeed effectOptions={{
           colors: {
@@ -47,7 +45,7 @@ export default function PricingDetailsPage() {
           }
         }} />
       </div>
-      <div className="min-h-screen relative text-white p-8 cursor-none">
+      <div className="min-h-screen relative text-white p-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-lime-300 mb-4">📄 Team Pricing Document – DevGeeks</h1>

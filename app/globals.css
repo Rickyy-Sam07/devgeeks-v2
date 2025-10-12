@@ -2,21 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  cursor: none !important;
-}
-
-
 html, body {
   overflow-x: hidden;
   width: 100%;
   position: relative;
-}
-
-
-/* Keep text cursor for inputs */
-input, textarea, select {
-  cursor: text !important;
 }
 
 

@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useCallback, useState } from 'react';
 import { gsap } from 'gsap';
+import Image from 'next/image';
 import './MagicBento.css';
 
 export interface BentoCardProps {
@@ -37,42 +38,42 @@ const cardData: BentoCardProps[] = [
     title: 'Analytics',
     description: 'Track user behavior',
     label: 'Insights',
-    image: '/assets/features/analytics.png'
+    image: '/assets/features/analytics.webp'
   },
   {
     color: '#060010',
     title: 'Dashboard',
     description: 'Centralized data view',
     label: 'Overview',
-    image: '/assets/features/analytics.png'
+    image: '/assets/features/analytics.webp'
   },
   {
     color: '#060010',
     title: 'Collaboration',
     description: 'Work together seamlessly',
     label: 'Teamwork',
-    image: '/assets/features/analytics.png'
+    image: '/assets/features/analytics.webp'
   },
   {
     color: '#060010',
     title: 'Automation',
     description: 'Streamline workflows',
     label: 'Efficiency',
-    image: '/assets/features/analytics.png'
+    image: '/assets/features/analytics.webp'
   },
   {
     color: '#060010',
     title: 'Integration',
     description: 'Connect favorite tools',
     label: 'Connectivity',
-    image: '/assets/features/analytics.png'
+    image: '/assets/features/analytics.webp'
   },
   {
     color: '#060010',
     title: 'Security',
     description: 'Enterprise-grade protection',
     label: 'Protection',
-    image: '/assets/features/analytics.png'
+    image: '/assets/features/analytics.webp'
   }
 ];
 
@@ -573,7 +574,15 @@ const MagicBento1: React.FC<BentoProps> = ({
               >
                 {card.image && (
                   <div className="card__image">
-                    <img src={card.image} alt={card.title} loading="lazy" />
+                    <Image 
+                      src={card.image} 
+                      alt={card.title || 'Feature image'} 
+                      width={600}
+                      height={400}
+                      quality={75}
+                      loading="lazy"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </div>
                 )}
                 <div className="card__header">
@@ -702,7 +711,15 @@ const MagicBento1: React.FC<BentoProps> = ({
             >
               {card.image && (
                 <div className="card__image">
-                  <img src={card.image} alt={card.title} loading="lazy" />
+                  <Image 
+                    src={card.image} 
+                    alt={card.title || 'Feature image'} 
+                    width={600}
+                    height={400}
+                    quality={75}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
               )}
               <div className="card__header">

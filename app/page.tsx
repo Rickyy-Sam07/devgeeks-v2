@@ -8,7 +8,6 @@ import { LogoMarquee } from "@/components/logo-marquee"
 import { Pricing } from "@/components/pricing"
 import { SocialLinks } from "@/components/social-links"
 import { AppverseFooter } from "@/components/appverse-footer"
-import { SmoothCursor } from "@/components/ui/smooth-cursor"
 import LiquidEther from "@/components/liquid-ether-background"
 import Script from "next/script"
 
@@ -83,9 +82,18 @@ export default function Page() {
 
   return (
     <>
-      <SmoothCursor />
       <div className="fixed inset-0 z-0 bg-black">
-        <LiquidEther colors={['#2d05cc', '#0fe661', '#f6f939']} />
+        <LiquidEther 
+          colors={['#2d05cc', '#0fe661', '#f6f939']}
+          resolution={0.35}
+          mouseForce={15}
+          cursorSize={80}
+          iterationsPoisson={16}
+          iterationsViscous={16}
+          dt={0.016}
+          autoSpeed={0.3}
+          autoIntensity={1.8}
+        />
       </div>
       <div className="relative z-10 pointer-events-none">
         <div className="pointer-events-auto">
