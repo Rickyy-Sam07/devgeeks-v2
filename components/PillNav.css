@@ -173,7 +173,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
   padding: 0.5rem 1rem;
   background: transparent;
   color: rgba(255, 255, 255, 0.85);
@@ -186,7 +185,6 @@
   white-space: nowrap;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   letter-spacing: -0.01em;
@@ -194,77 +192,12 @@
 
 .pill:hover {
   color: #ffffff;
-  background: linear-gradient(
-    135deg,
-    rgba(139, 92, 246, 0.15) 0%,
-    rgba(236, 72, 153, 0.15) 100%
-  );
-  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.15);
   transform: translateY(-1px);
-  box-shadow: 
-    0 0 20px rgba(139, 92, 246, 0.3),
-    0 0 40px rgba(236, 72, 153, 0.2),
-    inset 0 1px 1px rgba(255, 255, 255, 0.1);
 }
 
 .pill:active {
   transform: translateY(0);
-  box-shadow: 
-    0 0 15px rgba(139, 92, 246, 0.2),
-    inset 0 1px 1px rgba(255, 255, 255, 0.1);
-}
-
-.pill .hover-circle {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  border-radius: 9999px;
-  background: linear-gradient(
-    135deg,
-    rgba(139, 92, 246, 0.2),
-    rgba(236, 72, 153, 0.2)
-  );
-  backdrop-filter: blur(20px);
-  z-index: 1;
-  display: block;
-  pointer-events: none;
-  will-change: transform;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.pill:hover .hover-circle {
-  opacity: 1;
-}
-
-.pill .label-stack {
-  position: relative;
-  display: inline-block;
-  line-height: 1;
-  z-index: 2;
-}
-
-.pill .pill-label {
-  position: relative;
-  z-index: 2;
-  display: inline-block;
-  line-height: 1;
-  will-change: transform;
-  transition: transform 0.3s ease;
-}
-
-.pill:hover .pill-label {
-  transform: translateY(-1px);
-}
-
-.pill .pill-label-hover {
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #ffffff;
-  z-index: 3;
-  display: inline-block;
-  will-change: transform, opacity;
 }
 
 .pill.is-active {
