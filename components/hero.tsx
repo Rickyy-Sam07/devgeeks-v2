@@ -1,6 +1,14 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import LazyVideo from "./lazy-video"
+import dynamic from "next/dynamic"
+
+
+const LazyVideo = dynamic(() => import("./lazy-video"), {
+  ssr: false,
+  loading: () => (
+    <div className="absolute inset-0 h-full w-full bg-black animate-pulse" />
+  )
+})
 
 export function Hero() {
   return (
@@ -12,9 +20,11 @@ export function Hero() {
             <p className="text-sm uppercase tracking-[0.25em] text-lime-300/80">DevGeeks™</p>
           </div>
           <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-white pointer-events-none">
-            <span className="block">BUILD • SHARE • GROW</span>
-            <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)]">LEARN. COLLABORATE. INSPIRE.</span>
-            <span className="block">YOUR TECH COMMUNITY.</span>
+            <span className="block">CODE • COLLABORATE • CONQUER</span>
+            <span className="block italic text-lime-300 drop-shadow-[0_0_25px_rgba(132,204,22,0.4)] text-6xl" style={{ fontFamily: "'Marck Script', cursive", letterSpacing: '2px' }}>
+              — With DevGeeks
+            </span>
+            <span className="block">Where Students Build, Brands Grow</span>
           </h1>
           <div className="mt-6 pointer-events-auto">
             <Button asChild className="rounded-full bg-lime-400 px-6 text-black hover:bg-lime-300">

@@ -35,45 +35,45 @@ const MOBILE_BREAKPOINT = 768;
 const cardData: BentoCardProps[] = [
   {
     color: '#060010',
-    title: 'Analytics',
-    description: 'Track user behavior',
-    label: 'Insights',
-    image: '/assets/features/security.webp'
+    title: 'Cultural Fusion',
+    description: 'Global minds, united in design.',
+    label: 'Fusion',
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/cultual.png'
   },
   {
     color: '#060010',
-    title: 'Dashboard',
-    description: 'Centralized data view',
-    label: 'Overview',
-    image: '/assets/features/security.webp'
+    title: 'Cross-Disciplinary Synergy',
+    description: 'Art + Logic = Magic',
+    label: 'Design meets Data',
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/synergy.png'
   },
   {
     color: '#060010',
-    title: 'Collaboration',
-    description: 'Work together seamlessly',
-    label: 'Teamwork',
-    image: '/assets/features/security.webp'
+    title: 'Creative Chaos',
+    description: 'From clash to creation.',
+    label: 'Brilliance.',
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/chaos.png'
   },
   {
     color: '#060010',
-    title: 'Automation',
-    description: 'Streamline workflows',
-    label: 'Efficiency',
-    image: '/assets/features/security.webp'
+    title: 'Inclusive Voices',
+    description: 'We listen. We build. Together',
+    label: 'Ideas',
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/inclusive.png'
   },
   {
     color: '#060010',
-    title: 'Integration',
-    description: 'Connect favorite tools',
-    label: 'Connectivity',
-    image: '/assets/features/security.webp'
+    title: 'Global Collaboration',
+    description: 'Distance fades. Ideas connect.',
+    label: 'Wrorldwide',
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/global.png'
   },
   {
     color: '#060010',
-    title: 'Security',
-    description: 'Enterprise-grade protection',
-    label: 'Protection',
-    image: '/assets/features/security.webp'
+    title: 'FUTURE-READY',
+    description: 'Tomorrow, Today',
+    label: 'Futuristic',
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/future.png'
   }
 ];
 

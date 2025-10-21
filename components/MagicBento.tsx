@@ -38,42 +38,42 @@ const cardData: BentoCardProps[] = [
     title: 'Analytics',
     description: 'Track user behavior',
     label: 'Insights',
-    image: '/assets/features/collaboration.webp'
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/analytics.png'
   },
   {
     color: '#060010',
     title: 'Dashboard',
     description: 'Centralized data view',
     label: 'Overview',
-    image: '/assets/features/collaboration.webp'
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/overview.png'
   },
   {
     color: '#060010',
     title: 'Collaboration',
     description: 'Work together seamlessly',
     label: 'Teamwork',
-    image: '/assets/features/collaboration.webp'
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/collaborate.png'
   },
   {
     color: '#060010',
     title: 'Automation',
     description: 'Streamline workflows',
     label: 'Efficiency',
-    image: '/assets/features/collaboration.webp'
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/automation.png'
   },
   {
     color: '#060010',
     title: 'Integration',
     description: 'Connect favorite tools',
     label: 'Connectivity',
-    image: '/assets/features/collaboration.webp'
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/integration.png'
   },
   {
     color: '#060010',
     title: 'Security',
     description: 'Enterprise-grade protection',
     label: 'Protection',
-    image: '/assets/features/collaboration.webp'
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/security.png'
   }
 ];
 

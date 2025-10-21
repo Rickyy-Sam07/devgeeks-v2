@@ -2,11 +2,18 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Instagram, Twitter, Youtube, MessageCircle } from "lucide-react"
-import LazyVideo from "./lazy-video"
 import Image from "next/image"
+
+const LazyVideo = dynamic(() => import("./lazy-video"), {
+  ssr: false,
+  loading: () => (
+    <div className="absolute inset-0 h-full w-full bg-black animate-pulse" />
+  )
+})
 
 interface FooterContent {
   tagline: string
@@ -14,8 +21,8 @@ interface FooterContent {
 }
 
 const defaultContent: FooterContent = {
-  tagline: "Experience 3D animation like never before. We craft cinematic visuals for brands and products.",
-  copyright: "© 2025 — Skitbit International Uk",
+  tagline: "The Powerhouse of Young Tech & Real-World Impact.",
+  copyright: "© 2025 — DevGeeks™. All rights reserved.",
 }
 
 export function AppverseFooter() {

@@ -97,8 +97,8 @@ export function Features() {
       <div className="grid gap-6 md:grid-cols-1 mt-12 max-w-7xl mx-auto">
         <Card className="hidden md:block liquid-glass border border-white/10 bg-white/5 backdrop-blur-xl">
           <CardHeader>
-            <p className="text-[11px] tracking-widest text-neutral-400">ADAPTABILITY</p>
-            <CardTitle className="mt-1 text-xl text-white">Make the experience truly intuitive</CardTitle>
+            <p className="text-[11px] tracking-widest text-neutral-400">DIVERSITY</p>
+            <CardTitle className="mt-1 text-xl text-white">different minds create extraordinary synergy</CardTitle>
           </CardHeader>
           <CardContent>
           <div className="flex justify-center">

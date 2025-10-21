@@ -35,45 +35,45 @@ const MOBILE_BREAKPOINT = 768;
 const cardData: BentoCardProps[] = [
   {
     color: '#060010',
-    title: 'Analytics',
-    description: 'Track user behavior',
-    label: 'Insights',
-    image: '/assets/features/analytics.webp'
+    title: 'INNOVATION',
+    description: 'Turning imagination into code.',
+    label: 'Imagination',
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/innovation.png'
   },
   {
     color: '#060010',
-    title: 'Dashboard',
-    description: 'Centralized data view',
-    label: 'Overview',
-    image: '/assets/features/analytics.webp'
+    title: 'SCALABILITY',
+    description: 'Expand Without Limits.',
+    label: 'Growth',
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/scalability.png'
   },
   {
     color: '#060010',
-    title: 'Collaboration',
-    description: 'Work together seamlessly',
-    label: 'Teamwork',
-    image: '/assets/features/analytics.webp'
+    title: 'PERFORMANCE',
+    description: 'Speed meets precision.',
+    label: 'Faster',
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/performance.png'
   },
   {
     color: '#060010',
-    title: 'Automation',
-    description: 'Streamline workflows',
-    label: 'Efficiency',
-    image: '/assets/features/analytics.webp'
+    title: 'COMMUNITY',
+    description: 'Where ideas find allies',
+    label: 'Build Together',
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/communtiy.png'
   },
   {
     color: '#060010',
-    title: 'Integration',
-    description: 'Connect favorite tools',
-    label: 'Connectivity',
-    image: '/assets/features/analytics.webp'
+    title: 'OPPORTUNITY',
+    description: 'Where talent meets impact.',
+    label: 'Skills',
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/opportunity.png'
   },
   {
     color: '#060010',
-    title: 'Security',
-    description: 'Enterprise-grade protection',
-    label: 'Protection',
-    image: '/assets/features/analytics.webp'
+    title: 'MENTORSHIP',
+    description: 'Guidance that shapes growth.',
+    label: 'Evolve',
+    image: 'https://dq8m68shjb69r1hf.public.blob.vercel-storage.com/mentor.png'
   }
 ];
 

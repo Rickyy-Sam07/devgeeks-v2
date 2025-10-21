@@ -28,6 +28,10 @@ export default function RootLayout({
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap"
+          rel="stylesheet"
+        />
         <Script id="dynamic-favicon" strategy="beforeInteractive">
           {`
             function updateFavicon() {
