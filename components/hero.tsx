@@ -24,7 +24,7 @@ export function Hero() {
             <span className="block italic text-lime-300 drop-shadow-[0_0_25px_rgba(132,204,22,0.4)] text-6xl" style={{ fontFamily: "'Marck Script', cursive", letterSpacing: '2px' }}>
               — With DevGeeks
             </span>
-            <span className="block">Where Students Build, Brands Grow</span>
+            <span className="block">Where Students Builds & Brands Grow</span>
           </h1>
           <div className="mt-6 pointer-events-auto">
             <Button asChild className="rounded-full bg-lime-400 px-6 text-black hover:bg-lime-300">
