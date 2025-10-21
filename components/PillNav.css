@@ -32,6 +32,11 @@
     padding: 0 1rem;
     background: transparent;
   }
+  
+  .pill-nav-content::before {
+    inset: -2px;
+    padding: 2px;
+  }
 }
 
 .pill-nav-content {
@@ -39,100 +44,35 @@
   display: flex;
   align-items: center;
   height: var(--nav-h);
-  background: rgba(255, 255, 255, 0.107);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   border-radius: 9999px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   gap: 2rem;
-  padding: 1.2rem 1.9rem;
-  overflow: hidden;
+  padding: 0.75rem 1.5rem;
 }
 
-/* Animated Gradient Border */
 .pill-nav-content::before {
   content: '';
   position: absolute;
   inset: -2px;
   border-radius: 9999px;
   padding: 2px;
-  background: linear-gradient(
-    90deg,
-    #667eea,
-    #764ba2,
-    #f093fb,
-    #f5576c,
-    #ffa726,
-    #667eea
-  );
+  background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000);
   background-size: 400% 400%;
+  animation: rgbBorder 3s ease-in-out infinite;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
-  animation: border-flow 8s linear infinite;
-  pointer-events: none;
 }
 
-@keyframes border-flow {
-  0% {
+@keyframes rgbBorder {
+  0%, 100% {
     background-position: 0% 50%;
   }
-  100% {
-    background-position: 400% 50%;
-  }
-}
-
-
-@keyframes rotate-gradient {
-  0% {
-    background: linear-gradient(
-      0deg,
-      #667eea 0%,
-      #764ba2 25%,
-      #f093fb 50%,
-      #f5576c 75%,
-      #ffa726 100%
-    );
-  }
-  25% {
-    background: linear-gradient(
-      90deg,
-      #667eea 0%,
-      #764ba2 25%,
-      #f093fb 50%,
-      #f5576c 75%,
-      #ffa726 100%
-    );
-  }
   50% {
-    background: linear-gradient(
-      180deg,
-      #667eea 0%,
-      #764ba2 25%,
-      #f093fb 50%,
-      #f5576c 75%,
-      #ffa726 100%
-    );
-  }
-  75% {
-    background: linear-gradient(
-      270deg,
-      #667eea 0%,
-      #764ba2 25%,
-      #f093fb 50%,
-      #f5576c 75%,
-      #ffa726 100%
-    );
-  }
-  100% {
-    background: linear-gradient(
-      360deg,
-      #667eea 0%,
-      #764ba2 25%,
-      #f093fb 50%,
-      #f5576c 75%,
-      #ffa726 100%
-    );
+    background-position: 100% 50%;
   }
 }
 
@@ -173,43 +113,57 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
   padding: 0.5rem 1rem;
   background: transparent;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--base, #fff);
   text-decoration: none;
   border-radius: 9999px;
   box-sizing: border-box;
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 16px;
   line-height: 1;
   white-space: nowrap;
   cursor: pointer;
   position: relative;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  letter-spacing: -0.01em;
+  overflow: hidden;
 }
 
-.pill:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-1px);
+.pill .hover-circle {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 1;
+  display: block;
+  pointer-events: none;
+  will-change: transform;
 }
 
-.pill:active {
-  transform: translateY(0);
+.pill .label-stack {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  z-index: 2;
 }
 
-.pill.is-active {
-  background: linear-gradient(
-    135deg,
-    rgba(139, 92, 246, 0.2) 0%,
-    rgba(236, 72, 153, 0.2) 100%
-  );
-  color: #ffffff;
-  box-shadow: 
-    0 0 20px rgba(139, 92, 246, 0.25),
-    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+.pill .pill-label {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  line-height: 1;
+  will-change: transform;
+}
+
+.pill .pill-label-hover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--hover-text, #fff);
+  z-index: 3;
+  display: inline-block;
+  will-change: transform, opacity;
 }
 
 .pill.is-active::after {
@@ -220,10 +174,9 @@
   transform: translateX(-50%);
   width: 12px;
   height: 12px;
-  background: linear-gradient(135deg, #8B5CF6, #EC4899);
+  background: var(--base, #000);
   border-radius: 50px;
   z-index: 4;
-  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
 }
 
 .desktop-only {

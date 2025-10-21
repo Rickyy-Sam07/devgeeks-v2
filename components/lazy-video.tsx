@@ -10,10 +10,15 @@ interface LazyVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
 export default function LazyVideo({ src, className, ...props }: LazyVideoProps) {
   const [isLoaded, setIsLoaded] = useState(false)
   const [isInView, setIsInView] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
-    if (!videoRef.current) return
+    setIsMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!videoRef.current || !isMounted) return
 
     // Intersection Observer for lazy loading
     const observer = new IntersectionObserver(
@@ -33,7 +38,7 @@ export default function LazyVideo({ src, className, ...props }: LazyVideoProps) 
     observer.observe(videoRef.current)
 
     return () => observer.disconnect()
-  }, [])
+  }, [isMounted])
 
   useEffect(() => {
     if (isInView && videoRef.current && !isLoaded) {
@@ -47,9 +52,9 @@ export default function LazyVideo({ src, className, ...props }: LazyVideoProps) 
       ref={videoRef}
       className={className}
       {...props}
-      preload={isInView ? "auto" : "none"}
+      preload="none"
     >
-      {isInView && <source src={src} type="video/mp4" />}
+      <source src={src} type="video/mp4" />
     </video>
   )
 }
