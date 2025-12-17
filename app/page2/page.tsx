@@ -29,6 +29,239 @@ const Hyperspeed = dynamic(() => import('@/components/hyperspeed'), {
   )
 })
 
+const standardOptions = [
+  { 
+    id: 'static',
+    title: "Professional Static Website", 
+    desc: "Perfect for businesses, portfolios, and informational sites",
+    min: 4000, 
+    max: 7000,
+    features: [
+      '3-5 responsive pages',
+      'Mobile-first design',
+      'HTML/CSS/JavaScript',
+      'Fast loading speed',
+      'SEO friendly structure',
+      'Contact form integration',
+      'Social media links',
+      'Google Maps integration',
+      'Image optimization',
+      'Cross-browser compatibility',
+      'SSL certificate setup',
+      'Basic analytics integration',
+      'Favicon & meta tags',
+      'Custom 404 page',
+      'Cookie consent banner',
+      'WhatsApp click-to-chat'
+    ],
+    included: [
+      'Sitemap',
+      '5 page templates',
+      'Wireframes',
+      'Basic prototype',
+      'Standard theme',
+      'Responsive layout',
+      'Testing & go-live',
+      'Training session'
+    ]
+  },
+  {
+    id: 'ecommerce',
+    title: "E-commerce Store",
+    desc: "Sell products online with a complete shopping experience",
+    min: 15000,
+    max: 30000,
+    features: [
+      'Product catalog (up to 50 items)',
+      'Shopping cart functionality',
+      'Payment gateway integration',
+      'Order management system',
+      'Customer account creation',
+      'Inventory tracking',
+      'Product search & filters',
+      'Order confirmation emails',
+      'Mobile responsive design',
+      'SSL security',
+      'Admin dashboard',
+      'Product reviews',
+      'Shipping calculator',
+      'Discount codes',
+      'Analytics integration',
+      'WhatsApp order notifications'
+    ],
+    included: [
+      'Sitemap',
+      '15 page templates',
+      'Wireframes',
+      'Interactive prototype',
+      'Custom theme',
+      'Responsive layout',
+      'Payment gateway setup',
+      'Product import/export',
+      'Testing & go-live',
+      'Training sessions',
+      '60 days support'
+    ]
+  },
+  {
+    id: 'blog',
+    title: "Blog / Content Site",
+    desc: "Share your thoughts, articles, and engage with readers",
+    min: 5000,
+    max: 10000,
+    features: [
+      'Blog post management',
+      'Categories & tags',
+      'Author profiles',
+      'Comment system',
+      'Social media sharing',
+      'Newsletter signup',
+      'Search functionality',
+      'RSS feed',
+      'Related posts',
+      'Reading time estimates',
+      'Markdown editor',
+      'Image galleries',
+      'SEO optimization',
+      'Mobile responsive',
+      'Admin panel',
+      'Archive pages'
+    ],
+    included: [
+      'Sitemap',
+      '8 page templates',
+      'Wireframes',
+      'Basic prototype',
+      'Custom theme',
+      'Responsive layout',
+      'CMS setup & training',
+      'SEO configuration',
+      'Testing & go-live',
+      'Training sessions',
+      '30 days support'
+    ]
+  },
+  {
+    id: 'portal',
+    title: "Business Portal",
+    desc: "Internal system for team collaboration and data management",
+    min: 20000,
+    max: 45000,
+    features: [
+      'User authentication & roles',
+      'Dashboard with analytics',
+      'File upload & management',
+      'Team collaboration tools',
+      'Task management',
+      'Calendar integration',
+      'Search functionality',
+      'Activity logs',
+      'Notifications system',
+      'Data export options',
+      'Custom reports',
+      'API integration',
+      'Mobile responsive',
+      'Admin controls',
+      'Email notifications',
+      'Secure data storage'
+    ],
+    included: [
+      'System architecture',
+      '20+ page templates',
+      'Wireframes',
+      'Interactive prototype',
+      'Custom theme',
+      'Responsive layout',
+      'Database design',
+      'API documentation',
+      'User role setup',
+      'Security audit',
+      'Testing & go-live',
+      'Training sessions',
+      '90 days support'
+    ]
+  },
+  {
+    id: 'events',
+    title: "Events & Booking Site",
+    desc: "Manage events, registrations, and attendee information",
+    min: 12000,
+    max: 25000,
+    features: [
+      'Event listing & details',
+      'Online registration forms',
+      'Payment integration',
+      'Ticket generation',
+      'Attendee management',
+      'Email confirmations',
+      'Calendar integration',
+      'Event categories',
+      'Seat/capacity management',
+      'Early bird pricing',
+      'Discount codes',
+      'QR code tickets',
+      'Event gallery',
+      'Social media sharing',
+      'Mobile responsive',
+      'Admin dashboard'
+    ],
+    included: [
+      'Sitemap',
+      '12 page templates',
+      'Wireframes',
+      'Interactive prototype',
+      'Custom theme',
+      'Responsive layout',
+      'Payment gateway setup',
+      'Email templates',
+      'QR code system',
+      'Testing & go-live',
+      'Training sessions',
+      '45 days support'
+    ]
+  },
+  {
+    id: 'inventory',
+    title: "Inventory Manager",
+    desc: "Track products, stock levels, and manage suppliers",
+    min: 18000,
+    max: 35000,
+    features: [
+      'Product database',
+      'Stock level tracking',
+      'Low stock alerts',
+      'Barcode generation',
+      'Supplier management',
+      'Purchase orders',
+      'Sales tracking',
+      'Reports & analytics',
+      'Multi-location support',
+      'Product categories',
+      'Search & filters',
+      'Data import/export',
+      'User roles & permissions',
+      'Email notifications',
+      'Mobile responsive',
+      'Cloud backup'
+    ],
+    included: [
+      'System architecture',
+      '18 page templates',
+      'Wireframes',
+      'Interactive prototype',
+      'Custom theme',
+      'Responsive layout',
+      'Database design',
+      'Barcode system setup',
+      'Data migration',
+      'Report templates',
+      'Testing & go-live',
+      'Training sessions',
+      '60 days support'
+    ]
+  }
+]
+
 const pricingData = {
   websiteDev: [
     { title: "Static Website", desc: "Basic HTML/CSS/JS, 3-5 pages, mobile responsive", min: 4000, max: 7000 },
@@ -77,8 +310,9 @@ const currencySymbols = {
 export default function PricingDetailsPage() {
   const [packageType, setPackageType] = useState('standard')
   const [selectedItems, setSelectedItems] = useState([])
+  const [selectedStandard, setSelectedStandard] = useState('static')
   const [currency, setCurrency] = useState('INR')
-  const headerRef = useRef<HTMLDivElement | null>(null)
+  const headerRef = useRef(null)
   const [isFixed, setIsFixed] = useState(false)
 
   const formatCurrency = (amount, curr) => {
@@ -88,9 +322,10 @@ export default function PricingDetailsPage() {
 
   const calculateTotal = () => {
     if (packageType === 'standard') {
+      const selected = standardOptions.find(opt => opt.id === selectedStandard)
       const discount = 0.85
-      const min = Math.round(4000 * discount)
-      const max = Math.round(7000 * discount)
+      const min = Math.round(selected.min * discount)
+      const max = Math.round(selected.max * discount)
       return `${formatCurrency(min, currency)} - ${formatCurrency(max, currency)}`
     }
 
@@ -123,6 +358,53 @@ export default function PricingDetailsPage() {
   }
 
   const isSelected = (item) => selectedItems.some(i => i.title === item.title)
+
+  const getIncludedItems = () => {
+    if (packageType === 'standard') {
+      const selected = standardOptions.find(opt => opt.id === selectedStandard)
+      return selected.included
+    } else {
+      // Custom package - generate dynamic list based on selections
+      const baseItems = ['Sitemap', 'Custom design', 'Wireframes', 'Prototype', 'Responsive layout', 'Testing & go-live']
+      const customItems = []
+
+      // Check what types of features are selected
+      const hasWebDev = selectedItems.some(item => pricingData.websiteDev.includes(item))
+      const hasEcommerce = selectedItems.some(item => item.title.includes('commerce'))
+      const hasPayment = selectedItems.some(item => item.title.includes('Payment'))
+      const hasAI = selectedItems.some(item => pricingData.ai.includes(item))
+      const hasWeb3 = selectedItems.some(item => pricingData.web3.includes(item))
+      const hasCMS = selectedItems.some(item => item.title.includes('CMS') || item.title.includes('dashboard'))
+      const hasDatabase = selectedItems.some(item => item.title.includes('database'))
+
+      if (hasWebDev) customItems.push('Custom theme integration')
+      if (hasEcommerce) customItems.push('Product setup & import')
+      if (hasPayment) customItems.push('Payment gateway configuration')
+      if (hasAI) customItems.push('AI model training & deployment')
+      if (hasWeb3) customItems.push('Smart contract deployment')
+      if (hasCMS) customItems.push('Admin panel training')
+      if (hasDatabase) customItems.push('Database architecture')
+
+      // Add support based on project size
+      let totalMax = 0
+      selectedItems.forEach(item => { totalMax += item.max })
+      
+      if (totalMax > 50000) {
+        customItems.push('120 days premium support')
+      } else if (totalMax > 30000) {
+        customItems.push('90 days support')
+      } else if (totalMax > 15000) {
+        customItems.push('60 days support')
+      } else {
+        customItems.push('30 days support')
+      }
+
+      customItems.push('Comprehensive training')
+      customItems.push('Documentation')
+
+      return [...baseItems, ...customItems]
+    }
+  }
 
   useEffect(() => {
     const onScroll = () => {
@@ -198,6 +480,7 @@ export default function PricingDetailsPage() {
                   onClick={() => {
                     setPackageType('standard')
                     setSelectedItems([])
+                    setSelectedStandard('static')
                   }}
                   className={`glass-card p-10 rounded-2xl cursor-pointer transition-all duration-300 hover:scale-105 relative overflow-hidden group ${
                     packageType === 'standard' ? 'ring-2 ring-lime-300' : ''
@@ -213,28 +496,67 @@ export default function PricingDetailsPage() {
 
               {/* Standard Section */}
               {packageType === 'standard' && (
-                <div className="glass-card p-12 rounded-2xl text-center">
-                  <h3 className="text-3xl font-bold text-lime-300 mb-5">Professional Static Website</h3>
-                  <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                    A clean, efficient website built with modern web technologies. Perfect for businesses looking for a professional online presence without complexity.
-                  </p>
+                <div className="space-y-8">
+                  {/* Standard Package Selection */}
+                  <div className="glass-card p-10 rounded-2xl">
+                    <h2 className="text-3xl font-bold text-lime-300 mb-3">Choose Your Standard Package</h2>
+                    <p className="text-gray-400 mb-8">Select the type of website that best fits your needs</p>
 
-                  <div className="text-5xl font-bold text-lime-300 my-8">₹4,000 - ₹7,000</div>
+                    <div className="grid md:grid-cols-2 gap-5">
+                      {standardOptions.map((option) => (
+                        <div
+                          key={option.id}
+                          onClick={() => setSelectedStandard(option.id)}
+                          className={`glass-card p-6 rounded-xl cursor-pointer transition-all duration-300 hover:scale-105 relative ${
+                            selectedStandard === option.id ? 'ring-2 ring-lime-300' : ''
+                          }`}
+                        >
+                          {selectedStandard === option.id && (
+                            <div className="absolute top-4 right-4 w-6 h-6 bg-lime-300 rounded-full flex items-center justify-center text-black font-bold text-sm">
+                              ✓
+                            </div>
+                          )}
+                          <div className="font-semibold text-white text-xl mb-2">{option.title}</div>
+                          <div className="text-gray-400 text-sm mb-4 leading-snug">{option.desc}</div>
+                          <div className="text-lime-300 font-semibold text-lg">
+                            ₹{option.min.toLocaleString()} - ₹{option.max.toLocaleString()}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
-                  <div className="grid md:grid-cols-2 gap-4 my-10 text-left">
-                    {['3-5 responsive pages', 'Mobile-first design', 'HTML/CSS/JavaScript', 'Fast loading speed', 'SEO friendly structure', 'Contact form integration', 'Social media links', 'Google Maps integration'].map((feature, i) => (
-                      <div key={i} className="flex items-center gap-3 text-gray-300">
-                        <span className="text-lime-300 text-xl font-bold">✓</span>
-                        {feature}
+                  {/* Selected Package Details */}
+                  {(() => {
+                    const selected = standardOptions.find(opt => opt.id === selectedStandard)
+                    return (
+                      <div className="glass-card p-12 rounded-2xl text-center">
+                        <h3 className="text-3xl font-bold text-lime-300 mb-5">{selected.title}</h3>
+                        <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+                          {selected.desc}
+                        </p>
+
+                        <div className="text-5xl font-bold text-lime-300 my-8">
+                          ₹{selected.min.toLocaleString()} - ₹{selected.max.toLocaleString()}
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-4 my-10 text-left">
+                          {selected.features.map((feature, i) => (
+                            <div key={i} className="flex items-center gap-3 text-gray-300">
+                              <span className="text-lime-300 text-xl font-bold">✓</span>
+                              {feature}
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="glass-card p-6 rounded-xl border-l-4 border-lime-300 text-left">
+                          <p className="text-gray-300 leading-relaxed">
+                            <strong className="text-white">What's included:</strong> Complete website setup, domain configuration, hosting guidance, 30 days of free support, and basic training on content updates.
+                          </p>
+                        </div>
                       </div>
-                    ))}
-                  </div>
-
-                  <div className="glass-card p-6 rounded-xl border-l-4 border-lime-300 text-left">
-                    <p className="text-gray-300 leading-relaxed">
-                      <strong className="text-white">What's included:</strong> Complete website setup, domain configuration, hosting guidance, 30 days of free support, and basic training on content updates.
-                    </p>
-                  </div>
+                    )
+                  })()}
                 </div>
               )}
 
@@ -399,7 +721,7 @@ export default function PricingDetailsPage() {
               <div className="border-t border-gray-700 pt-8 mb-8">
                 <h3 className="text-xl font-semibold mb-5">Included in your pack:</h3>
                 <ul className="space-y-2">
-                  {['Sitemap', '10 page templates', 'Wireframes', 'Prototype', 'Custom theme integration', 'Responsive layout', 'Testing & go-live', 'Training'].map((item, i) => (
+                  {getIncludedItems().map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-gray-300">
                       <span className="text-lime-300 text-xl">•</span>
                       {item}
@@ -415,6 +737,14 @@ export default function PricingDetailsPage() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .glass-card {
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+      `}</style>
     </>
   )
 }
