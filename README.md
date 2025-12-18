@@ -16,6 +16,9 @@ npm run dev
 
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+## Project Structure
+
+```
 ├── app/                          # Next.js App Router
 │   ├── api/                     # API routes
 │   ├── calculator/              # Pricing Calculator routes
@@ -56,6 +59,7 @@ npm run dev
 │   └── images/                 # Images
 └── ...
 
+```
 
 ## Image Assets Needed
 
