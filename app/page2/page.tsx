@@ -323,6 +323,7 @@ export default function PricingDetailsPage() {
   const calculateTotal = () => {
     if (packageType === 'standard') {
       const selected = standardOptions.find(opt => opt.id === selectedStandard)
+      if (!selected) return 'Select a package'
       const discount = 0.85
       const min = Math.round(selected.min * discount)
       const max = Math.round(selected.max * discount)
