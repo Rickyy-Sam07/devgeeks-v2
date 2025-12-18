@@ -262,6 +262,13 @@ const standardOptions = [
   }
 ]
 
+type PricingItem = {
+  title: string
+  desc: string
+  min: number
+  max: number
+}
+
 const pricingData = {
   websiteDev: [
     { title: "Static Website", desc: "Basic HTML/CSS/JS, 3-5 pages, mobile responsive", min: 4000, max: 7000 },
@@ -269,7 +276,7 @@ const pricingData = {
     { title: "Single-Page App (SPA)", desc: "React/Next.js with routing, API integration", min: 10000, max: 18000 },
     { title: "E-commerce Site", desc: "Product catalog, cart, payment gateway", min: 15000, max: 30000 },
     { title: "Blog/CMS Integration", desc: "Blog engine with markdown/WYSIWYG + admin", min: 5000, max: 10000 }
-  ],
+  ] as PricingItem[],
   addons: [
     { title: "WhatsApp/Contact plugin", desc: "Direct messaging or chat widget integration", min: 250, max: 500 },
     { title: "Google Sheets automation", desc: "Auto-save form data, dynamic updates", min: 1000, max: 2000 },
@@ -279,20 +286,20 @@ const pricingData = {
     { title: "Payment Integration", desc: "Secure payment gateway setup (Razorpay/UPI)", min: 6000, max: 10000 },
     { title: "SEO Optimization", desc: "Metadata, structured data, keyword targeting", min: 2500, max: 5000 },
     { title: "Analytics Setup", desc: "Track user behavior & traffic (GA4, Hotjar)", min: 800, max: 1500 }
-  ],
+  ] as PricingItem[],
   ai: [
     { title: "Chatbot (LLM based)", desc: "Trained chatbot for site or internal use", min: 5000, max: 15000 },
     { title: "Custom Chatbot", desc: "Advanced trained chatbot", min: 10000, max: 20000 },
     { title: "OCR / Doc-to-Text", desc: "Process documents/images into searchable content", min: 4000, max: 10000 },
     { title: "Recommendation Systems", desc: "Personalized suggestions based on user behavior", min: 10000, max: 25000 },
     { title: "AI agent using N8N", desc: "Business automations using third-party tools", min: 20000, max: 50000 }
-  ],
+  ] as PricingItem[],
   web3: [
     { title: "Smart Contract", desc: "ERC-20/ERC-721 deployment on testnet/mainnet", min: 5000, max: 15000 },
     { title: "NFT Minting Website", desc: "Web3-enabled site to mint & display NFTs", min: 10000, max: 25000 },
     { title: "Wallet Integration", desc: "Connect wallets to interact with dApp", min: 2000, max: 5000 },
     { title: "Blockchain UI/UX", desc: "React-based dApp interfaces", min: 5000, max: 12000 }
-  ]
+  ] as PricingItem[]
 }
 
 const exchangeRates = {
@@ -309,10 +316,10 @@ const currencySymbols = {
 
 export default function PricingDetailsPage() {
   const [packageType, setPackageType] = useState('standard')
-  const [selectedItems, setSelectedItems] = useState([])
+  const [selectedItems, setSelectedItems] = useState<PricingItem[]>([])
   const [selectedStandard, setSelectedStandard] = useState('static')
   const [currency, setCurrency] = useState<keyof typeof exchangeRates>('INR')
-  const headerRef = useRef(null)
+  const headerRef = useRef<HTMLDivElement>(null)
   const [isFixed, setIsFixed] = useState(false)
 
   const formatCurrency = (amount: number, curr: keyof typeof exchangeRates) => {
@@ -349,7 +356,7 @@ export default function PricingDetailsPage() {
     return `${formatCurrency(totalMin, currency)} - ${formatCurrency(totalMax, currency)}`
   }
 
-  const toggleItem = (item) => {
+  const toggleItem = (item: PricingItem) => {
     const exists = selectedItems.find(i => i.title === item.title)
     if (exists) {
       setSelectedItems(selectedItems.filter(i => i.title !== item.title))
@@ -358,12 +365,12 @@ export default function PricingDetailsPage() {
     }
   }
 
-  const isSelected = (item) => selectedItems.some(i => i.title === item.title)
+  const isSelected = (item: PricingItem) => selectedItems.some(i => i.title === item.title)
 
   const getIncludedItems = () => {
     if (packageType === 'standard') {
       const selected = standardOptions.find(opt => opt.id === selectedStandard)
-      return selected.included
+      return selected?.included || []
     } else {
       // Custom package - generate dynamic list based on selections
       const baseItems = ['Sitemap', 'Custom design', 'Wireframes', 'Prototype', 'Responsive layout', 'Testing & go-live']
