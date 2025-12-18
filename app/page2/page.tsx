@@ -315,7 +315,7 @@ export default function PricingDetailsPage() {
   const headerRef = useRef(null)
   const [isFixed, setIsFixed] = useState(false)
 
-  const formatCurrency = (amount, curr) => {
+  const formatCurrency = (amount: number, curr: keyof typeof exchangeRates) => {
     const converted = Math.round(amount * exchangeRates[curr])
     return `${currencySymbols[curr]}${converted.toLocaleString()}`
   }
