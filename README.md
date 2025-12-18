@@ -16,34 +16,46 @@ npm run dev
 
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Project Structure
-
-```
-├── app/                    # Next.js App Router
-│   ├── api/               # API routes
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Homepage (main component merger)
-├── components/            # React components
-│   ├── ui/               # Reusable UI components
-│   ├── PillNav.tsx       # Glassmorphism navigation
-│   ├── PillNav.css       # Navigation styles
-│   ├── Lanyard.tsx       # 3D lanyard animation
-│   ├── Lanyard.css       # Lanyard styles
+├── app/                          # Next.js App Router
+│   ├── api/                     # API routes
+│   ├── calculator/              # Pricing Calculator routes
+│   │   ├── layout.tsx           # Shared calculator layout
+│   │   ├── website/             # Website Development calculator
+│   │   │   └── page.tsx
+│   │   ├── app/                 # Desktop & Mobile App calculator
+│   │   │   └── page.tsx
+│   │   ├── ai/                  # AI / Automation calculator
+│   │   │   └── page.tsx
+│   │   ├── web3/                # Web3 / Blockchain calculator
+│   │   │   └── page.tsx
+│   │   ├── testing/             # Testing & QA calculator
+│   │   │   └── page.tsx
+│   │   └── maintenance/         # Maintenance & Hosting calculator
+│   │       └── page.tsx
+│   ├── globals.css              # Global styles
+│   ├── layout.tsx               # Root layout
+│   └── page.tsx                 # Homepage (marketing / SEO)
+├── components/                  # React components
+│   ├── ui/                      # Reusable UI components
+│   ├── PricingCalculatorSystem.tsx # Unified pricing calculator (client)
+│   ├── PillNav.tsx              # Glassmorphism navigation
+│   ├── PillNav.css              # Navigation styles
+│   ├── Lanyard.tsx              # 3D lanyard animation
+│   ├── Lanyard.css              # Lanyard styles
 │   ├── liquid-ether-background.tsx # WebGL fluid background
 │   ├── liquid-ether-background.css # Background styles
-│   ├── hero.tsx          # Hero section
-│   ├── features.tsx      # Features section
-│   ├── pricing.tsx       # Pricing section
-│   ├── site-header.tsx   # Main header component
+│   ├── hero.tsx                 # Hero section
+│   ├── features.tsx             # Features section
+│   ├── pricing.tsx              # Marketing pricing section
+│   ├── site-header.tsx          # Main header component
 │   └── ...
-├── lib/                  # Utility functions
-├── public/               # Static assets
-│   ├── assets/lanyard/   # 3D model assets
-│   ├── icons/           # SVG icons
-│   └── images/          # Images
+├── lib/                         # Utility functions & helpers
+├── public/                      # Static assets
+│   ├── assets/lanyard/          # 3D model assets
+│   ├── icons/                  # SVG icons
+│   └── images/                 # Images
 └── ...
-```
+
 
 ## Image Assets Needed
 
