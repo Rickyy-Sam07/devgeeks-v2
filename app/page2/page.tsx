@@ -311,7 +311,7 @@ export default function PricingDetailsPage() {
   const [packageType, setPackageType] = useState('standard')
   const [selectedItems, setSelectedItems] = useState([])
   const [selectedStandard, setSelectedStandard] = useState('static')
-  const [currency, setCurrency] = useState('INR')
+  const [currency, setCurrency] = useState<keyof typeof exchangeRates>('INR')
   const headerRef = useRef(null)
   const [isFixed, setIsFixed] = useState(false)
 
