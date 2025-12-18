@@ -537,6 +537,7 @@ export default function PricingDetailsPage() {
                   {/* Selected Package Details */}
                   {(() => {
                     const selected = standardOptions.find(opt => opt.id === selectedStandard)
+                    if (!selected) return null
                     return (
                       <div className="glass-card p-12 rounded-2xl text-center">
                         <h3 className="text-3xl font-bold text-lime-300 mb-5">{selected.title}</h3>
@@ -714,7 +715,7 @@ export default function PricingDetailsPage() {
               
               <select
                 value={currency}
-                onChange={(e) => setCurrency(e.target.value)}
+                onChange={(e) => setCurrency(e.target.value as keyof typeof exchangeRates)}
                 className="w-full bg-black/50 border-2 border-lime-300 rounded-lg p-3 text-lime-300 font-semibold mb-5 cursor-pointer"
               >
                 <option value="INR">INR ₹</option>
