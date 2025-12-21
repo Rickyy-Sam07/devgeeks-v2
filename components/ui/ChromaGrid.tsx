@@ -171,14 +171,33 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
               }}
             />
 
-            <div className="p-[10px]">
-              <img
-                src={c.image}
-                alt={c.title}
-                loading="lazy"
-                className="w-full h-full object-cover rounded-[10px]"
-              />
-            </div>
+<div className="p-[10px]">
+  <div
+    className="
+      relative
+      w-full
+      overflow-hidden
+      rounded-[10px]
+      bg-black/20
+    "
+    style={{ aspectRatio: "4 / 5" }}
+  >
+    <img
+      src={c.image}
+      alt={c.title}
+      loading="lazy"
+      className="
+        absolute
+        inset-0
+        w-full
+        h-full
+        object-cover
+        object-center
+      "
+    />
+  </div>
+</div>
+
 
             <footer className="p-3 text-white grid grid-cols-[1fr_auto] gap-x-3 gap-y-1">
               <h3 className="font-semibold">{c.title}</h3>
