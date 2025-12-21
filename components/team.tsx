@@ -27,7 +27,7 @@ export function Team() {
       url: "https://linkedin.com/in/",
     },
     {
-      image: "https://i.pravatar.cc/300?img=16",
+      image: "https://raw.githubusercontent.com/Zenoguy/devgeeks-v2/refs/heads/main/public/assets/SG1.png",
       title: "Shreyan Ghosh",
       subtitle: "Backend Engineer",
       handle: "@Zenoguy",
