@@ -6,6 +6,7 @@ import { CommunityStats } from "@/components/community-stats"
 import { Features } from "@/components/features"
 import { LogoMarquee } from "@/components/logo-marquee"
 import { Pricing } from "@/components/pricing"
+import { Team } from "@/components/team"
 import { SocialLinks } from "@/components/social-links"
 import { AppverseFooter } from "@/components/appverse-footer"
 import LiquidEther from "@/components/liquid-ether-background"
@@ -106,6 +107,7 @@ export default function Page() {
             <Features />
             <LogoMarquee />
             <Pricing />
+            <Team />
             <SocialLinks />
             <AppverseFooter />
           </main>
