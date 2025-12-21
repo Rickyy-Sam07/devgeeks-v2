@@ -72,8 +72,8 @@ export function Team() {
   </h2>
 
   <p className="mt-6 text-lg md:text-xl text-white/75 max-w-md mx-auto lg:mx-0 leading-relaxed">
-    We’re a focused team of developers and designers building real products,
-    collaborating closely, and delivering work we’re proud to put our name on.
+    We're a focused team of developers and designers building real products,
+    collaborating closely, and delivering work we're proud to put our name on.
   </p>
 
   <p className="mt-4 text-sm text-white/50 max-w-md mx-auto lg:mx-0">
@@ -84,10 +84,7 @@ export function Team() {
 
           {/* RIGHT — GRID (PUSHED RIGHT, STILL RESPONSIVE) */}
           <div className="flex justify-center lg:justify-end">
-            <ChromaGrid
-              items={teamMembers}
-              disableBackdrop
-            />
+            <ChromaGrid items={teamMembers} />
           </div>
         </div>
       </div>

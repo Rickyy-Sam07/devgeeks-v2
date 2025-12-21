@@ -29,7 +29,7 @@ export function AppverseFooter() {
   const [content, setContent] = useState<FooterContent>(defaultContent)
 
   useEffect(() => {
-    const savedContent = localStorage.getItem("skitbit-content")
+    const savedContent = localStorage.getItem("devgeeks-content")
     if (savedContent) {
       try {
         const parsed = JSON.parse(savedContent)
@@ -68,7 +68,7 @@ export function AppverseFooter() {
                     loop={true}
                     muted={true}
                     playsInline={true}
-                    aria-label="Skitbit app preview - approvals made easy"
+                    aria-label="devgeeks app preview - approvals made easy"
                   />
                   <div className="relative p-3">
                     <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
@@ -92,8 +92,8 @@ export function AppverseFooter() {
           <div className="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr]">
             <div className="space-y-3">
               <div className="flex items-center gap-1.5">
-                <Image src="/icons/skitbit-white.svg" alt="Skitbit logo" width={24} height={24} className="h-6 w-6" />
-                <span className="text-xl font-semibold text-lime-300">Skitbit</span>
+                <Image src="/icons/devgeeks-white.svg" alt="devgeeks logo" width={24} height={24} className="h-6 w-6" />
+                <span className="text-xl font-semibold text-lime-300">devgeeks</span>
               </div>
               <p className="max-w-sm text-sm text-neutral-400">{content.tagline}</p>
             </div>
@@ -102,7 +102,7 @@ export function AppverseFooter() {
               <div>
                 <h5 className="mb-2 text-xs font-semibold uppercase tracking-widest text-neutral-400">Navigation</h5>
                 <ul className="space-y-2 text-sm text-neutral-300">
-                  {["Home", "Features", "Testimonials", "Pricing", "Blog", "Download"].map((item) => (
+                  {["Home", "Features", "Testimonials", "Pricing", "Team", "Download"].map((item) => (
                     <li key={item}>
                       <Link href={`#${item.toLowerCase()}`} className="hover:text-lime-300">
                         {item}
@@ -117,11 +117,11 @@ export function AppverseFooter() {
                   <li className="flex items-center gap-2">
                     <Twitter className="h-4 w-4 text-neutral-400" />
                     <a
-                      href="https://twitter.com/theskitbit"
+                      href="https://twitter.com/thedevgeeks"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-lime-300"
-                      aria-label="Follow skitbit on Twitter"
+                      aria-label="Follow devgeeks on Twitter"
                     >
                       X/Twitter
                     </a>
@@ -129,11 +129,11 @@ export function AppverseFooter() {
                   <li className="flex items-center gap-2">
                     <Youtube className="h-4 w-4 text-neutral-400" />
                     <a
-                      href="https://www.youtube.com/@skitbitinternational"
+                      href="https://www.youtube.com/@devgeeksinternational"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-lime-300"
-                      aria-label="Subscribe to skitbit on YouTube"
+                      aria-label="Subscribe to devgeeks on YouTube"
                     >
                       YouTube
                     </a>
@@ -141,11 +141,11 @@ export function AppverseFooter() {
                   <li className="flex items-center gap-2">
                     <Instagram className="h-4 w-4 text-neutral-400" />
                     <a
-                      href="https://instagram.com/theskitbit"
+                      href="https://instagram.com/thedevgeeks"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-lime-300"
-                      aria-label="Follow skitbit on Instagram"
+                      aria-label="Follow devgeeks on Instagram"
                     >
                       Instagram
                     </a>
@@ -153,11 +153,11 @@ export function AppverseFooter() {
                   <li className="flex items-center gap-2">
                     <MessageCircle className="h-4 w-4 text-neutral-400" />
                     <a
-                      href="https://threads.com/theskitbit"
+                      href="https://threads.com/thedevgeeks"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-lime-300"
-                      aria-label="Follow skitbit on Threads"
+                      aria-label="Follow devgeeks on Threads"
                     >
                       Threads
                     </a>

@@ -8,7 +8,7 @@ export function SiteHeader() {
     { label: "Home", href: "/" },
     { label: "Pricing", href: "#pricing" },
     { label: "Projects", href: "/Projects" },
-    { label: "Blog", href: "#blog" },
+    { label: "Team", href: "#team" },
     { label: "Customers", href: "#Customers" },
     { label: "About", href: "/About" },
     { label: "Contact", href: "https://wa.link/rc25na" }

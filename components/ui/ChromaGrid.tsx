@@ -58,6 +58,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     setX.current = gsap.quickSetter(root, "--x", "px") as SetterFn;
     setY.current = gsap.quickSetter(root, "--y", "px") as SetterFn;
 
+
     const measure = () => {
       const r = root.getBoundingClientRect();
       const g = grid.getBoundingClientRect();
@@ -161,7 +162,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
             style={{
               background: c.gradient,
               "--spotlight-color": "rgba(255,255,255,0.35)",
-            }}
+            } as React.CSSProperties}
           >
             <div
               className="absolute inset-0 pointer-events-none z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -171,33 +172,32 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
               }}
             />
 
-<div className="p-[10px]">
-  <div
-    className="
-      relative
-      w-full
-      overflow-hidden
-      rounded-[10px]
-      bg-black/20
-    "
-    style={{ aspectRatio: "4 / 5" }}
-  >
-    <img
-      src={c.image}
-      alt={c.title}
-      loading="lazy"
-      className="
-        absolute
-        inset-0
-        w-full
-        h-full
-        object-cover
-        object-center
-      "
-    />
-  </div>
-</div>
-
+            <div className="p-[10px]">
+              <div
+                className="
+                  relative
+                  w-full
+                  overflow-hidden
+                  rounded-[10px]
+                  bg-black/20
+                "
+                style={{ aspectRatio: "4 / 5" }}
+              >
+                <img
+                  src={c.image}
+                  alt={c.title}
+                  loading="lazy"
+                  className="
+                    absolute
+                    inset-0
+                    w-full
+                    h-full
+                    object-cover
+                    object-center
+                  "
+                />
+              </div>
+            </div>
 
             <footer className="p-3 text-white grid grid-cols-[1fr_auto] gap-x-3 gap-y-1">
               <h3 className="font-semibold">{c.title}</h3>

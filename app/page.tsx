@@ -18,10 +18,10 @@ export default function Page() {
   const pricingStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebPageElement",
-    "@id": "https://theskitbit.com/#pricing",
+    "@id": "https://devgeeks.com/#pricing",
     name: "Pricing Plans",
     description: "3D Animation pricing plans - Startup, Pro, and Premium packages for all business needs",
-    url: "https://theskitbit.com/#pricing",
+    url: "https://thedevgeeks.com/#pricing",
     mainEntity: {
       "@type": "PriceSpecification",
       name: "3D Animation Services",
@@ -55,28 +55,28 @@ export default function Page() {
   const pageStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://theskitbit.com/",
-    name: "Skitbit | 3D Animation Made Simple, Reliable & Scalable",
+    "@id": "https://thedevgeeks.com/",
+    name: "devgeeks | 3D Animation Made Simple, Reliable & Scalable",
     description:
-      "From product launches to full-scale campaigns, Skitbit delivers 3D animation that's fast, consistent, and built to wow your audience.",
-    url: "https://theskitbit.com/",
+      "From product launches to full-scale campaigns, devgeeks delivers 3D animation that's fast, consistent, and built to wow your audience.",
+    url: "https://thedevgeeks.com/",
     mainEntity: {
       "@type": "Organization",
-      name: "Skitbit",
-      url: "https://theskitbit.com",
+      name: "devgeeks",
+      url: "https://thedevgeeks.com",
       sameAs: [
-        "https://twitter.com/theskitbit",
-        "https://www.youtube.com/@skitbitinternational",
-        "https://instagram.com/theskitbit",
-        "https://threads.com/theskitbit",
+        "https://twitter.com/thedevgeeks",
+        "https://www.youtube.com/@devgeeksinternational",
+        "https://instagram.com/thedevgeeks",
+        "https://threads.com/thedevgeeks",
       ],
     },
     hasPart: [
       {
         "@type": "WebPageElement",
-        "@id": "https://theskitbit.com/#pricing",
+        "@id": "https://thedevgeeks.com/#pricing",
         name: "Pricing Section",
-        url: "https://theskitbit.com/#pricing",
+        url: "https://thedevgeeks.com/#pricing",
       },
     ],
   }
