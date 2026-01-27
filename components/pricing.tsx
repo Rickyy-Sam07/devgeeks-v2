@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2 } from "lucide-react"
-import { Carousel } from "./Carousel" // Make sure this path matches where you saved Carousel.tsx
+import { Carousel } from "./Carousel" // Ensure this path is correct
 
 // --- TYPES & HELPERS ---
 type Feature = { text: string; muted?: boolean }
@@ -29,10 +29,12 @@ function guessLocalCurrency(): Currency {
 }
 
 // --- DATA ---
+// Added 'href' to every object so the buttons know where to go
 const PLAN_DATA = [
   {
-    title: "Static Website",
+    title: "app",
     price: "₹4,000 - ₹7,000",
+    href: "/calculator/app",
     features: [
       "Basic HTML/CSS/JS",
       "3-5 pages",
@@ -43,16 +45,18 @@ const PLAN_DATA = [
   {
     title: "Dynamic Website",
     price: "₹10,000 - ₹25,000+",
+    href: "/calculator/website",
     features: [
-      "Full-stack development",
+      "Full-stack development", 
       "Custom backend",
       "Database integration",
       "Admin dashboard"
     ]
   },
   {
-    title: "E-commerce Site",
+    title: "web3",
     price: "₹15,000 - ₹30,000",
+    href: "/calculator/web3",
     features: [
       "Product catalog",
       "Shopping cart",
@@ -63,11 +67,36 @@ const PLAN_DATA = [
   {
     title: "AI Integration",
     price: "₹5,000 - ₹50,000+",
+    href: "/calculator/ai",
     features: [
       "Custom chatbots",
       "OCR/Document processing",
       "Recommendation systems",
       "Business automation"
+    ]
+  },
+  // I renamed the titles slightly below to make the cards distinct, 
+  // but you can change them back to "AI Integration" if you prefer.
+  {
+    title: "testing", 
+    price: "₹40,000 - ₹80,000+",
+    href: "/calculator/testing",
+    features: [
+      "Multi-tenant architecture",
+      "Subscription billing",
+      "User authentication",
+      "Scalable infrastructure"
+    ]
+  },
+  {
+    title: "maintainance",
+    price: "Custom Quote",
+    href: "/calculator/maintenance",
+    features: [
+      "Legacy system migration",
+      "Cloud architecture",
+      "High-security compliance",
+      "Dedicated support"
     ]
   }
 ]
@@ -129,10 +158,7 @@ export function Pricing() {
         <div className="relative w-full mt-10">
           <Carousel cardWidth={300}>
             {PLAN_DATA.map((plan, index) => (
-              /* We use a clean div here instead of the Card component.
-                 The border, background, and "Active" green glow are handled 
-                 by the Carousel.module.css on the parent wrapper.
-              */
+              /* Card Wrapper */
               <div key={index} className="h-full flex flex-col p-6 text-left">
                 
                 {/* Header */}
@@ -154,13 +180,17 @@ export function Pricing() {
                   ))}
                 </ul>
 
-                {/* Footer Button inside card (Optional) */}
+                {/* Footer Button inside card */}
+                {/* Updated to use Link and plan.href */}
                 <div className="mt-auto pt-6">
                   <Button 
+                    asChild
                     variant="outline" 
                     className="w-full border-neutral-700 bg-transparent text-neutral-300 hover:bg-neutral-800 hover:text-white"
                   >
-                    Details
+                    <Link href={plan.href}>
+                      Details
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -174,8 +204,8 @@ export function Pricing() {
             asChild
             className="rounded-full bg-lime-400 px-6 text-black hover:bg-lime-300"
           >
-            <Link href="/page2" target="_blank">
-              See All Pricing Details
+            <Link href="/services" target="_blank">
+              See All Services
             </Link>
           </Button>
         </div>
